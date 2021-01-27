@@ -15,7 +15,7 @@ module.exports = {
   base: "/",
   head: [["link", { rel: "icon", href: "/favicon.png" }]],
   plugins: [
-    ["sitemap", { hostname: "https://dandoc.u2sb.top" }],
+    ["sitemap", { hostname: "https://dandoc.u2sb.com" }],
     ["@vuepress/google-analytics", { ga: "UA-113200574-2" }],
     ["@vuepress/last-updated"],
     ["@vuepress/active-header-links"],
