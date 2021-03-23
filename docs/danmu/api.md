@@ -54,7 +54,6 @@ title: API
   `/api/danmu/v1/bilibili/danmu.json?bvid=[bvid]&p=[p]`，当 p=1 时可以省略参数 p，例如
   `https://danmu.u2sb.com/api/danmu/v1/bilibili/danmu.xml?bvid=18b411j72u&p=1`
 
-
 ## Dplayer 弹幕接口
 
 - `/api/danmu/dplayer/` ，例如  
@@ -137,9 +136,49 @@ title: API
   `/api/danmu/artplayer/v1/bilibili/danmu.xml?aid=[aid]&p=[p]&date=[date0]&date=[date1]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.json?aid=[aid]&p=[p]&date=[date0]&date=[date1]`
 
+### Dplayer 示例
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/dplayer/dist/DPlayer.min.js"></script>
+<div id="dplayer"></div>
+<script>
+  const dp = new DPlayer({
+    container: document.getElementById("dplayer"),
+    video: {
+      url: "demo.mp4",
+    },
+    subtitle: {
+      url: "demo.vtt",
+    },
+    danmaku: {
+      id: "视频的ID，建议使用视频Hash值，例如CRC64",
+      api: "https://danmu.u2sb.com/api/danmu/dplayer/", //你自己的api
+      addition: [
+        "https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?cid=73636868",
+      ], //解析BiliBili弹幕
+    },
+  });
+
+  //修复手机横屏问题
+  dp.on("fullscreen", function () {
+    if (
+      /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ) {
+      screen.orientation.lock("landscape");
+    }
+  });
+</script>
+```
+
 ### ArtPlayer 示例
 
 > 推荐使用 XML 格式的弹幕，JSON 格式的弹幕需要在服务端做额外的转换
+
+> 示例仅包含解析 BiliBili 弹幕，如需使用自己的弹幕库，徐仔细阅读文档，并自己实现发送弹幕的功能。
 
 ```js xml格式
 var art = new Artplayer({
@@ -158,9 +197,9 @@ var art = new Artplayer({
       margin: [10, 100],
       opacity: 1,
       fontSize: 25,
-      synchronousPlayback: false
-    })
-  ]
+      synchronousPlayback: false,
+    }),
+  ],
 });
 ```
 
@@ -178,16 +217,16 @@ var art = new Artplayer({
         fetch(
           "https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili.json?aid=810872&p=1"
         )
-          .then(res => res.json())
-          .then(res => res.data),
+          .then((res) => res.json())
+          .then((res) => res.data),
       speed: 5,
       maxlength: 50,
       margin: [10, 100],
       opacity: 1,
       fontSize: 25,
-      synchronousPlayback: false
-    })
-  ]
+      synchronousPlayback: false,
+    }),
+  ],
 });
 ```
 

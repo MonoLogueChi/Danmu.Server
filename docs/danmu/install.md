@@ -238,77 +238,83 @@ dotnet danmu.dll
 
 ## 其他配置
 
-推荐使用 [Supervisor](http://www.supervisord.org/) + [Caddy(v1)](https://caddyserver.com/v1/)
+推荐使用 [Supervisor](http://www.supervisord.org/) + [Caddy(v2)](https://caddyserver.com/)
 
 ### Caddy
 
 下载 caddy，需要插件
 
-- http.supervisor
-- supervisor
-
 下载以后放在一个自己认为合适的位置，创建配置文件
 
 ```bash
-mkdir config
-touch config/xxxxx.caddyfile
+touch Caddyfile
 ```
 
 修改配置文件
 
 ```
-https://danmu.u2sb.com {
-    gzip
+danmu.u2sb.com {
+    encode zstd gzip
     tls youmail@xxx.com
-    supervisor {
-        command ./Danmu
-        dir /www/danmu/Danmu
-        redirect_stdout stdout
-        redirect_stderr stderr
-    }
-    proxy / unix:/tmp/danmu.sock {
-        websocket
-        transparent
-    }
+
+    reverse_proxy unix//www/danmu/tmp/danmu.sock
 }
 ```
 
-根据你自己的情况修改配置文件。
+根据你自己的情况修改配置文件，详情请看 caddy 的[文档](https://caddyserver.com/docs/)。
 
 ### Supervisor
 
 #### 安装
 
 ```bash
-sudo apt install supervisor
+sudo apt install python3-pip
+sudo pip3 install supervisor
 ```
+
+全局配置文件部分省略，详细内容请自行查找资料。
 
 #### 添加配置文件
 
-```bash
-sudo touch /etc/supervisor/conf.d/caddy.conf
-sudo vim /etc/supervisor/conf.d/caddy.conf
+```ini danmu.conf
+[program:danmu]
+directory=/www/danmu/
+command=/www/danmu/server/Danmu
+autostart=true
+autorestart=true
+startsecs=3
+user = www-data
+stderr_logfile=/www/danmu/logs/error.log
+stdout_logfile=/www/danmu/logs/out.log
+stderr_logfile_maxbytes = 5MB
+stderr_logfile_backups = 20
+stdout_logfile_maxbytes = 5MB
+stdout_logfile_backups = 20
 ```
 
 ```ini caddy.conf
 [program:caddy]
-command = /www/caddy/caddy -conf /www/caddy/conf/*.caddyfile -agree -quic
-directory = /www/caddy/
-environment = DNSPOD_API_KEY=""
-user = www
+directory=/www/caddy/
+command=/www/caddy/caddy run
+environment = DNSPOD_API_KEY="",DNSPOD_HTTP_TIMEOUT=5000
+user = www-data
 stopsignal = INT
 autostart = true
 autorestart = true
-startsecs = 5
-stderr_logfile = /www/caddy/log/error.log
-stdout_logfile = /www/caddy/log/out.log
+startsecs = 3
+stderr_logfile = /www/caddy/logs/error.log
+stdout_logfile = /www/caddy/logs/out.log
 ```
 
 根据自己的情况创建配置文件，具体关于 Supervisor 的使用请自行百度。
 
 ### 使用 Nginx
 
-Nginx 配置较 caddy 稍麻烦，下面只是一个关键部分示例，具体配置还要自己想
+Nginx 配置较 caddy 稍麻烦，下面只是一个关键部分示例，具体配置还要自己想。
+
+::: warning 须知
+如使用 unix 域套接字连接，需让 danmu.server 与 nginx 使用相同用户启动。
+:::
 
 ::: details Nginx 配置示例
 
@@ -370,7 +376,7 @@ location /api/live
   });
 
   //修复手机横屏问题
-  dp.on("fullscreen", function() {
+  dp.on("fullscreen", function () {
     if (
       /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ) {
