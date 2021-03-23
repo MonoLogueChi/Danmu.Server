@@ -40,7 +40,7 @@ title: 安装
       },
       danmaku: true,
       apiBackend: liveDan(
-        "https://danmu.u2sb.top/api/live/danmu",
+        "https://danmu.u2sb.com/api/live/danmu",
         "cd30ae05-4ad5-5135-bd6d-337ac0de102e",
         function (dan) {
           dp.danmaku.draw(dan);
@@ -61,7 +61,7 @@ title: 安装
 </body>
 ```
 
-需要引入我写的 js `livedanmu.js`，然后配置仿照我上面的写就好了，弹幕服务器地址 `https://danmu.u2sb.top/api/dplayer/live`，`cd30ae05-4ad5-5135-bd6d-337ac0de102e` 是你的房间，每个直播间需要唯一，建议使用 uuid，如果是你自己搭建的弹幕服务器，路由都是你自己配的。
+需要引入我写的 js `livedanmu.js`，然后配置仿照我上面的写就好了，弹幕服务器地址 `https://danmu.u2sb.com/api/dplayer/live`，`cd30ae05-4ad5-5135-bd6d-337ac0de102e` 是你的房间，每个直播间需要唯一，建议使用 uuid，如果是你自己搭建的弹幕服务器，路由都是你自己配的。
 
 下面是随机生成的一个 `uuid`，可以直接复制替换示例中的房间号
 

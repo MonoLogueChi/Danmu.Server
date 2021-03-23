@@ -11,12 +11,12 @@ title: API
 ### 请求弹幕
 
 - `/api/danmu/v1?id=[id]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/v1/?id=C6CC6218F1FB8770`
+  `https://danmu.u2sb.com/api/danmu/v1/?id=C6CC6218F1FB8770`
 - `/api/danmu/v1/[id]`，例如  
-  `https://danmu.u2sb.top/api/danmu/v1/C6CC6218F1FB8770`
+  `https://danmu.u2sb.com/api/danmu/v1/C6CC6218F1FB8770`
 - `/api/danmu/v1/[id].[format]`，例如  
-  `https://danmu.u2sb.top/api/danmu/v1/C6CC6218F1FB8770.xml`
-  `https://danmu.u2sb.top/api/danmu/v1/C6CC6218F1FB8770.json`(json 格式的弹幕)
+  `https://danmu.u2sb.com/api/danmu/v1/C6CC6218F1FB8770.xml`
+  `https://danmu.u2sb.com/api/danmu/v1/C6CC6218F1FB8770.json`(json 格式的弹幕)
 
 ### 发送弹幕
 
@@ -44,41 +44,41 @@ title: API
 - `/api/danmu/v1/bilibili/?cid=[cid]`  
   `/api/danmu/v1/bilibili/danmu.xml?cid=[cid]`  
   `/api/danmu/v1/bilibili/danmu.json?cid=[cid]`，例如  
-  `https://danmu.u2sb.top/api/danmu/v1/bilibili/danmu.xml?cid=1176840`
+  `https://danmu.u2sb.com/api/danmu/v1/bilibili/danmu.xml?cid=1176840`
 - `/api/danmu/v1/bilibili/?aid=[aid]&p=[p]`  
   `/api/danmu/v1/bilibili/danmu.xml?aid=[aid]&p=[p]`  
   `/api/danmu/v1/bilibili/danmu.json?aid=[aid]&p=[p]`，当 p=1 时可以省略参数 p，例如
-  `https://danmu.u2sb.top/api/danmu/v1/bilibili/danmu.xml?aid=810872&p=1`
+  `https://danmu.u2sb.com/api/danmu/v1/bilibili/danmu.xml?aid=810872&p=1`
 - `/api/danmu/v1/bilibili/?bvid=[bvid]&p=[p]`  
   `/api/danmu/v1/bilibili/danmu.xml?bvid=[bvid]&p=[p]`  
   `/api/danmu/v1/bilibili/danmu.json?bvid=[bvid]&p=[p]`，当 p=1 时可以省略参数 p，例如
-  `https://danmu.u2sb.top/api/danmu/v1/bilibili/danmu.xml?bvid=18b411j72u&p=1`
+  `https://danmu.u2sb.com/api/danmu/v1/bilibili/danmu.xml?bvid=18b411j72u&p=1`
 
 
 ## Dplayer 弹幕接口
 
 - `/api/danmu/dplayer/` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/`
+  `https://danmu.u2sb.com/api/danmu/dplayer/`
 
 ### BiliBili 弹幕接口
 
 - `/api/danmu/dplayer/v3/bilibili/?cid=[cid]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?cid=73636868`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?cid=73636868`
 - `/api/danmu/dplayer/v3/bilibili/?aid=[aid]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid=41940944`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?aid=41940944`
 - `/api/danmu/dplayer/v3/bilibili/?aid=[aid]&p=[p]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid=41940944&p=1`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?aid=41940944&p=1`
 - `/api/danmu/dplayer/v3/bilibili/?bvid=[bvid]&p=[p]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?bvid=18b411j72u&p=1`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?bvid=18b411j72u&p=1`
 
 ### BiliBili 历史弹幕接口
 
 > 需配合 [BCookie](/danmu/install.html#配置文件解释) 使用
 
 - `/api/danmu/dplayer/v3/bilibili/?cid=[cid]&date=[date]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?cid=73636868&date=2019-07-26`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?cid=73636868&date=2019-07-26`
 - `/api/danmu/dplayer/v3/bilibili/?cid=[cid]&date=[date0]&date=[date1]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?cid=73636868&date=2019-07-26&date=2019-04-01`
+  `https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?cid=73636868&date=2019-07-26&date=2019-04-01`
 - 使用 aid 方法同理。
 - 使用 bvid 方法同理。
 
@@ -87,12 +87,12 @@ title: API
 ### 请求弹幕
 
 - `/api/danmu/artplayer/v1?id=[id]` ，例如  
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/?id=C6CC6218F1FB8770`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/?id=C6CC6218F1FB8770`
 - `/api/danmu/artplayer/v1/[id]`，例如  
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/C6CC6218F1FB8770`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/C6CC6218F1FB8770`
 - `/api/danmu/artplayer/v1/[id].[format]`，例如  
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/C6CC6218F1FB8770.xml`
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/C6CC6218F1FB8770.json`(json 格式的弹幕)
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/C6CC6218F1FB8770.xml`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/C6CC6218F1FB8770.json`(json 格式的弹幕)
 
 ### 发送弹幕
 
@@ -116,15 +116,15 @@ title: API
 - `/api/danmu/artplayer/v1/bilibili/?cid=[cid]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.xml?cid=[cid]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.json?cid=[cid]`，例如  
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/bilibili/danmu.xml?cid=1176840`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili/danmu.xml?cid=1176840`
 - `/api/danmu/artplayer/v1/bilibili/?aid=[aid]&p=[p]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.xml?aid=[aid]&p=[p]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.json?aid=[aid]&p=[p]`，当 p=1 时可以省略参数 p，例如
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/bilibili/danmu.xml?aid=810872&p=1`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili/danmu.xml?aid=810872&p=1`
 - `/api/danmu/artplayer/v1/bilibili/?bvid=[bvid]&p=[p]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.xml?bvid=[bvid]&p=[p]`  
   `/api/danmu/artplayer/v1/bilibili/danmu.json?bvid=[bvid]&p=[p]`，当 p=1 时可以省略参数 p，例如
-  `https://danmu.u2sb.top/api/danmu/artplayer/v1/bilibili/danmu.xml?bvid=18b411j72u&p=1`
+  `https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili/danmu.xml?bvid=18b411j72u&p=1`
 
 ### BiliBili 历史弹幕接口
 
@@ -152,7 +152,7 @@ var art = new Artplayer({
   plugins: [
     artplayerPluginDanmuku({
       danmuku:
-        "https://danmu.u2sb.top/api/danmu/artplayer/v1/bilibili.xml?aid=810872&p=1",
+        "https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili.xml?aid=810872&p=1",
       speed: 5,
       maxlength: 50,
       margin: [10, 100],
@@ -176,7 +176,7 @@ var art = new Artplayer({
     artplayerPluginDanmuku({
       danmuku: () =>
         fetch(
-          "https://danmu.u2sb.top/api/danmu/artplayer/v1/bilibili.json?aid=810872&p=1"
+          "https://danmu.u2sb.com/api/danmu/artplayer/v1/bilibili.json?aid=810872&p=1"
         )
           .then(res => res.json())
           .then(res => res.data),

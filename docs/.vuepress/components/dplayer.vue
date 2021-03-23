@@ -27,7 +27,7 @@ export default {
     },
     danmuApi: {
       type: String,
-      default: "https://danmu.u2sb.top/api/danmu/dplayer/"
+      default: "https://danmu.u2sb.com/api/danmu/dplayer/"
     },
     danmuAddition: {
       type: String,

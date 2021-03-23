@@ -257,7 +257,7 @@ touch config/xxxxx.caddyfile
 修改配置文件
 
 ```
-https://danmu.u2sb.top {
+https://danmu.u2sb.com {
     gzip
     tls youmail@xxx.com
     supervisor {
@@ -362,9 +362,9 @@ location /api/live
     },
     danmaku: {
       id: "视频的ID，建议使用视频Hash值，例如CRC64",
-      api: "https://danmu.u2sb.top/api/danmu/dplayer/", //你自己的api
+      api: "https://danmu.u2sb.com/api/danmu/dplayer/", //你自己的api
       addition: [
-        "https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?cid=73636868",
+        "https://danmu.u2sb.com/api/danmu/dplayer/v3/bilibili/?cid=73636868",
       ], //解析BiliBili弹幕
     },
   });

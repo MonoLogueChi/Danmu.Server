@@ -7,9 +7,9 @@ title: 其他API
 ## 通过bv号查询av号
 
 - `/api/other/bilibili/queryaid/?bvid=[bvid]`，例如  
-  `https://danmu.u2sb.top/api/other/bilibili/queryaid/?bvid=18b411j72u`
+  `https://danmu.u2sb.com/api/other/bilibili/queryaid/?bvid=18b411j72u`
 - `/api/other/bilibili/queryaid/?aid=[aid]`，例如  
-  `https://danmu.u2sb.top/api/other/bilibili/queryaid/?aid=49511508`
+  `https://danmu.u2sb.com/api/other/bilibili/queryaid/?aid=49511508`
 
 
 <ClientOnly>
